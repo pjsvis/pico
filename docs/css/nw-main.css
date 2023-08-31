@@ -16,7 +16,7 @@
     --line-height: var(--font-lineheight-1);
     --font-weight: var(--font-weight-4);
     --font-size: var(--font-size-1);
-    --border-radius: var(--radius-3);
+    --border-radius: var(--radius-2);
     --border-width:var(--border-size-1);
     --outline-width: 3px;
     --spacing: 1rem;
@@ -36,6 +36,15 @@
     --modal-overlay-backdrop-filter: blur(0.25rem);
 
     --card-box-shadow: var(--shadow-3);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    --typography-spacing-vertical: var(--size-2);
 }
 
 /* THEME SECTION */

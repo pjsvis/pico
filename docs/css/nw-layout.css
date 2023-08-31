@@ -1,12 +1,12 @@
 /* the props */
-@import "https://unpkg.com/open-props";
+@import "./open-props.min.css";
 
 /* optional imports that use the props */
 /* @import "https://unpkg.com/open-props/normalize.min.css"; */
 /* @import "https://unpkg.com/open-props/buttons.min.css"; */
 
 :root {
-    --primary: var(--purple-9) --secondary: var(--purple-5) --total-height: 99.999vh;
+    /* --primary: var(--purple-9) --secondary: var(--purple-5) --total-height: 99.999vh; */
     --total-width: 99vw;
     --margin-bottom: 0px;
     --border: 0px solid black;
