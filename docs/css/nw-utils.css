@@ -1,0 +1,62 @@
+/* flex utils */
+.flex {
+    display: flex;
+    gap: var(--size-2);
+}
+
+.flex-start {
+    justify-content: flex-start;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.flex-space-between {
+    justify-content: space-between;
+}
+
+.flex-space-around {
+    justify-content: space-around;
+}
+
+.flex-space-evenly {
+    justify-content: space-evenly;
+}
+
+/* Margin utils */
+.mt1 {
+    margin-block-start: var(--space-1);
+}
+
+.mt2 {
+    margin-block-start: var(--space-2);
+}
+
+.mt3 {
+    margin-block-start: var(--space-3);
+}
+
+.mt4 {
+    margin-block-start: var(--space-4);
+}
+
+.ml1 {
+    margin-inline-start: var(--space-1);
+}
+
+.ml2 {
+    margin-inline-start: var(--space-2);
+}
+
+.ml3 {
+    margin-inline-start: var(--space-3);
+}
+
+.ml4 {
+    margin-inline-start: var(--space-4);
+}
