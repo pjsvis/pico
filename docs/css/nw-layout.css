@@ -1,0 +1,165 @@
+/* the props */
+@import "./open-props.min.css";
+
+/* optional imports that use the props */
+/* @import "https://unpkg.com/open-props/normalize.min.css"; */
+/* @import "https://unpkg.com/open-props/buttons.min.css"; */
+
+:root {
+    /* --primary: var(--purple-9) --secondary: var(--purple-5) --total-height: 99.999vh; */
+    --total-width: 99vw;
+    --margin-bottom: 0px;
+    --border: 0px solid black;
+
+    /* grid variables */
+
+    --header-height: var(--size-9);
+    --left-width: var(--size-content-1);
+    --right-width: var(--size-content-1);
+    --footer-height: var(--size-7);
+}
+
+/* Ref:  https://www.bram.us/2021/07/23/prevent-unwanted-layout-shifts-caused-by-scrollbars-with-the-scrollbar-gutter-css-property/ */
+html {
+    width: 100%;
+    /* 100% width of parent (root) element */
+    height: 100vh;
+    /* 100% height of viewport */
+    background: var(--gray-1);
+    /* 10% opacity black (very light gray) */
+
+    /* our root font size */
+    overflow: none;
+
+}
+
+body {
+    margin: 0;
+    /* content goes to edge of viewport */
+    height: 100vh;
+    /* and spans height of viewport */
+    line-height: var(--font-lineheight-2);
+    font-family: var(--font-sans);
+    font-size: 1.0em;
+
+}
+
+/* Ref: https://www.computerhope.com/issues/ch002064.htm */
+div.nw-container {
+    min-height: 25rem;
+    /* mainbody height never squishes < 25rem */
+    display: grid;
+    width: 100%;
+    height: 100%;
+
+    /* grid-template-columns:
+        [left] 10rem auto 10rem [right]; */
+
+    grid-template-columns:
+        [left] var(--left-width) auto var(--right-width) [right];
+
+    grid-template-rows:
+        [top] var(--header-height) auto var(--footer-height) [bottom];
+
+
+
+    grid-template-areas:
+        "head head head"
+        "panleft mainbody panright"
+        "foot foot foot";
+}
+
+div.header {
+    background: var(--purple-8);
+    /* 20% black */
+    grid-area: head;
+    /* head corresponds to name in template */
+    box-shadow: var(--shadow-2);
+
+}
+
+div.footer {
+    background: var(--purple-5);
+    grid-area: foot;
+    box-shadow: var(--shadow-2);
+}
+
+div.panel {
+    /* div elements with "panel" class */
+    background: var(--gray-2);
+    /* 10% black */
+    box-shadow: var(--shadow-2);
+}
+
+div.panel.left {
+    /* with both "panel" and "left" class */
+    grid-area: panleft;
+}
+
+div.panel.right {
+    grid-area: panright;
+}
+
+div.mainbody {
+    grid-area: mainbody;
+    /* width: 30rem; */
+    width: 100%;
+    /* mainbody width is fixed */
+    justify-self: center;
+    /* and always centered in grid area */
+    overflow: auto;
+}
+
+div.body-text {
+    max-width: var(--size-content-3)
+}
+
+div.center {
+    margin: 0 auto;
+}
+
+.flex{
+    display: flex;
+    gap: var(--size-2);
+}
+.flex-start {
+    justify-content: flex-start;
+}
+
+.flex-center {
+    justify-content: center;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.padding-1{
+    padding: var(--size-1);
+}
+
+@media screen and (max-width: 50rem) {
+
+    /* if viewport width < 50rem */
+    div.panel.left {
+        grid-column-end: left;
+        /* left panel stops at left edge */
+    }
+
+    div.panel.right {
+        grid-column-start: right;
+        /* right panel starts at right edge */
+    }
+
+    div.panel {
+        display: none;
+        /* neither panel is displayed */
+    }
+
+    div.mainbody {
+        grid-column-start: left;
+        /* mainbody starts at left edge */
+        grid-column-end: right;
+        /* mainbody ends at right edge */
+    }
+}

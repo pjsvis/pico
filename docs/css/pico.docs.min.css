@@ -1,3 +1,5 @@
-@import "../css/pico.docs.min.ex.css";
-@import "./nw-main.css";
-@import "./nw-utils.css";
+@import "./open-props.min.css";
+@import "./pico.min.css";
+@import './nw-main.css';
+@import './nw-utils.css';
+@import './nw-layout.css';
